@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulary Editor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+</head>
+<body id="quiz-editor-page">
+    <main id="editor-main" class="panel">
+        <header><h1>Vocabulary Editor</h1></header>
+
+        <div id="ai-generation-section">
+            <h2 style="font-family: var(--font-header); color: var(--color-primary);">Generate with AI</h2>
+            <p style="opacity: 0.8;">Enter a topic (e.g., "10 French fruits") or paste a list of words to have the AI format and add them for you.</p>
+            <div class="form-group">
+                <textarea id="ai-prompt-input" rows="4" placeholder="e.g., 15 common household items..."></textarea>
+            </div>
+            <button id="generate-btn" class="main-action-btn nav-link">✨ Generate with AI</button>
+        </div>
+
+        <table id="vocab-table">
+            <thead><tr><th>English</th><th>French</th><th>Actions</th></tr></thead>
+            <tbody></tbody>
+        </table>
+
+        <!-- ==== NEW BUTTON CONTAINER ==== -->
+        <div class="main-actions-container">
+            <button id="save-btn" class="main-action-btn">Save All Vocabulary</button>
+            <button id="remove-all-btn" class="main-action-btn delete-all-btn">Remove All Words</button>
+        </div>
+        <!-- ============================ -->
+
+        <p id="save-confirm"></p>
+        <a href="index.html" class="main-action-btn nav-link">Go to Quiz »</a>
+
+        <form id="add-form">
+            <h2 style="margin-top: 40px;">Add Word Manually</h2>
+            <div class="form-group">
+                <label for="english-input">English</label>
+                <input type="text" id="english-input" required>
+            </div>
+            <div class="form-group">
+                <label for="french-input">French (if multiple answers, separate with a comma)</label>
+                <input type="text" id="french-input" required>
+            </div>
+            <button type="submit" id="add-btn" class="main-action-btn">Add Word</button>
+        </form>
+    </main>
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/quizEditor.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

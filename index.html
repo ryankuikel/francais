@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Quiz Élégant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+</head>
+<body id="quiz-page">
+
+    <div id="page-wrapper">
+        <!-- ==== TOP ROW: MAIN CONTENT ==== -->
+        <div id="main-content-wrapper">
+            <!-- Left Column: Main Quiz -->
+            <main id="quiz-panel" class="panel">
+                <header>
+                    <label class="dark-mode-toggle">
+                        <input type="checkbox" id="dark-mode-toggle">
+                        <span class="slider"></span>
+                    </label>
+                    <h1>Le Quiz Élégant</h1>
+                    <h2>Par Coffee Break French</h2>
+                </header>
+                <div id="quiz-content">
+                    <div id="question-container">
+                        <p>
+                            Translate the following
+                            <span id="repetition-goal-text" style="font-weight: bold; opacity: 0.8;"></span>
+                        </p>
+                        <p id="english-phrase"></p>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="text" id="answer-input" placeholder="Type answer (Enter) or ask AI (Shift+Enter)...">
+                    </div>
+                    <div id="special-chars"></div>
+                    <div id="controls"><button id="submit-btn" class="main-action-btn">Soumettre (Submit)</button></div>
+                   
+                    <div id="feedback">
+                        <!-- Content (✅ or ❌) is set by JS -->
+                    </div>
+
+                    <div id="progress-container"><p id="progress-text"></p><div id="progress-bar-container"><div id="progress-bar"></div></div></div>
+                    <div class="links-container"><a href="quiz_editor.html" class="edit-link">Edit Vocabulary</a></div>
+                </div>
+                <div id="final-screen" style="display: none;">
+                     <h2 style="font-family: var(--font-header); font-size: 2.5em; color: var(--color-primary);">Félicitations!</h2>
+                     <p style="font-size:1.2em;">You have masterfully completed the entire lesson.</p>
+                     <button id="restart-btn" class="main-action-btn">Practice Again</button>
+                     <div class="links-container">
+                        <a href="quiz_editor.html" class="edit-link">Edit Vocabulary</a>
+                        <a href="quote_editor.html" class="edit-link">Edit Quotes</a>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Right Column: AI Assistant -->
+            <aside id="ai-panel" class="panel side-panel">
+                <h2>AI Tutor</h2>
+                <div id="ai-tutor-note">
+                    <span id="ai-tutor-response-text"></span>
+                    <div id="ai-example-sentence">
+                        <span id="ai-example-french"></span>
+                        <span id="ai-example-english"></span>
+                    </div>
+                </div>
+                <button id="ai-tts-button" class="tts-button" style="display: none; font-size: 1.5em; margin-top: 15px; color: var(--color-primary-text);">🔊</button>
+            </aside>
+        </div>
+
+        <!-- ==== BOTTOM ROW: QUOTES ==== -->
+        <footer id="quote-panel" class="panel side-panel">
+            <h2>Citation du Jour</h2>
+            <p id="quote-french"></p>
+            <p id="quote-author"></p>
+            <a href="quote_editor.html" class="edit-link">Edit Quotes</a>
+        </footer>
+    </div>
+
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/quiz.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
